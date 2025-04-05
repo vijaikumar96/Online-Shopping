@@ -1,0 +1,140 @@
+﻿<script src="~/js/admin.js"></script>
+<section class="product-tab-area section-ptb" data-animated-id="3">
+    <div class="container">
+        <div class="collection-category">
+            <div class="mb-3 text-center animate__fadeIn animate__animated" data-animate="animate__fadeIn"> 
+                <div class="section-title">
+                    <h4 class="section-heading">Create Category</h4>
+                </div>
+                <div class="tab mst-18 mst-xl-27 animate__fadeIn animate__animated" data-animate="animate__fadeIn">
+                    <ul class="nav nav-tabs justify-content-center border-0" role="tablist">
+                        <li id="li-create-category">
+                            <a href="#tab1" data-bs-toggle="tab" class="d-block font-16 text-uppercase heading-weight show active" aria-selected="true" role="tab">Create</a>
+                        </li>
+                        <li onclick="invokeViewCategories()" id="li-view-category">
+                            <a href="#tab2" data-bs-toggle="tab" class="d-block font-16 text-uppercase heading-weight" aria-selected="false" role="tab" tabindex="-1">View</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="tab1" role="tabpanel">
+                    <div class="row">
+                        <div class="col-12 col-lg-9 col-xl-7 col-xxl-6 mx-lg-auto">
+                            <div class="tce-area dvclsformcontrols">
+                                <input type="hidden" class="custom-control" name="flag" value="Create" />
+                                <input type="hidden" class="custom-control" name="existingImageName" value="" />
+                                <form method="post" action="javascript:void(0)">
+                                    <div class="tce-field">
+                                        <div class="row field-row">                                           
+                                            <div class="col-12 field-col animate__fadeIn animate__animated custom-group" data-animate="animate__fadeIn">
+                                                <label for="subject" class="field-label">Category Name</label>
+                                                <input type="text" data-mandatory="Y" name="categoryName" class="w-100 custom-control" placeholder="Category Name" autocomplete="name">
+                                            </div>
+                                           
+                                            <div class="col-12 field-col animate__fadeIn animate__animated custom-group" data-animate="animate__fadeIn">
+                                                <label class="field-label">Category Image</label>
+                                                <div class="field-attachment ptb-30 plr-15 plr-sm-30 text-center">
+                                                    <div class="attachment-upload d-flex flex-column align-items-center">
+                                                        <label for="ticket-img" class="attachment-file-upload dominant-link text-decoration-underline">Upload Image</label>
+                                                        <div class="attachment-count d-none mst-6 meb-24">0 images</div>
+                                                        <input data-mandatory="Y" type="file" id="ticket-img" name="categoryImagePath" class="w-100 attachment-file custom-control" hidden="">
+                                                        <div class="field-attached">
+                                                            <ul class="ul-mt15 attachment-uploaded"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 field-col animate__fadeIn animate__animated custom-group" data-animate="animate__fadeIn">
+                                                <label for="type" class="field-label">Status <span class="text-danger">*</span></label>
+                                                <select data-mandatory="Y" name="status" class="w-100 custom-control">
+                                                    <option value="Active">Active</option>
+                                                    <option value="Inactive">Inactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tce-button mst-30">
+                                        <div class="row btn-row">
+                                            <div class="col-12 col-sm-6 animate__fadeIn animate__animated" data-animate="animate__fadeIn">
+                                                <button type="submit" onclick="handleCategory()" class="w-100 btn-style2 quaternary-btn category-submit-btn">Create</button>
+                                            </div>
+                                            <div class="col-12 col-sm-6 animate__fadeIn animate__animated" data-animate="animate__fadeIn">
+                                                <a href="ticket.html" class="w-100 btn-style2 secondary-btn">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel">
+                    <div class="row">
+                        <div class="col-12 animate__fadeIn animate__animated" data-animate="animate__fadeIn">
+                            <table id="tableViewCategory" class="table table-striped display responsive nowrap" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>                                      
+                                        <th>Image</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbodyViewCategory">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<link href="~/css/style3.css" rel="stylesheet" />
+<link href="~/css/account.css" rel="stylesheet" />
+
+<script>
+    function handleCategory() {
+        debugger
+        var request = GettingInputFieldvalues("dvclsformcontrols");
+        if (request.length == 0)
+            return false;
+
+        var formData = new FormData();      
+        formData.append('categoryName', request[0].categoryName);
+        formData.append('file', request[0].categoryImagePath);
+        formData.append('status', request[0].status);
+        formData.append('flag', request[0].flag);
+        formData.append('existingImageName', request[0].existingImageName);
+
+        $.blockUI({
+            message: '<h1>Loading...</h1>', // Message to display
+        });
+
+        $.ajax({
+            url: '@Url.Action("CategoryActions", "Admin")', // URL to your C# backend
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $.unblockUI();
+                if (response.status) {
+                    SuccessAlert("Success", response.result, location.reload());
+                }
+                else {
+                    ErrorAlert("Error", response.errorMessage || "Unable to process your request (#02)");
+                }
+            },
+            error: function (xhr, status, error) {
+                $.unblockUI();
+                ErrorAlert("Error", "Unable to process your request (#03)");
+            }
+            // });
+        });
+    }
+</script>

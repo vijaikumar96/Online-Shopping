@@ -1,0 +1,50 @@
+﻿<section class="banner-area section-pt section-pb" data-animated-id="2">
+    <div class="container clshomebanner">
+        <div class="row row-mtm30">          
+           
+        </div>
+    </div>
+</section>
+
+ <script>
+     var homeBannerBuilder = "";
+     
+     function InvokeProductsCallback() {
+        
+         if (productJson && productJson.length > 0) {
+             var noProducts = "<div class='alert alert-info'> No products found</div>";
+             homeBannerBuilder += '<div class="row row-mtm30">';
+             // homeBannerBuilder += '<div class="col-lg-1"> </div>';
+             $.map(productJson, function (category, index) {
+                 category.status = category.status || "Active";
+                 if (category.status == "Active") {
+                     noProducts = "";
+                     var imageUrl = '@Url.Content("~/images/")' + category.categoryImagePath;
+                     homeBannerBuilder += '<div class="col-12 col-lg-3  animate__fadeIn animate__animated" data - animate="animate__fadeIn">';
+                     homeBannerBuilder += '<div class="banner-block banner-hover">';
+                     homeBannerBuilder += '<a href="' + shopUrl + '?type=' + category.categoryName + '" class="banner-img d-flex align-items-center position-relative br-hidden">';
+                     homeBannerBuilder += ' <img src="' + imageUrl + '" class="w-100 img-fluid" alt = "banner-1" width = "255" height = "255">';
+                     homeBannerBuilder += '<div class="row position-absolute start-0 end-0 banner-content">';
+                     homeBannerBuilder += '<div class="col-12 me-auto">';
+                     homeBannerBuilder += '<div class="flex-column align-items-start text-center">';
+                     homeBannerBuilder += '<span class="d-inline-block dominant-btn ptb-10 ptb-sm-12 plr-15 plr-sm-30 mst-20 mst-sm-24 mst-xl-24 text-uppercase heading-weight border-radius" > ' + category.categoryName + ' </span>';
+                     homeBannerBuilder += '</div>';
+                     homeBannerBuilder += '</div>';
+                     homeBannerBuilder += '</div>';
+                     homeBannerBuilder += '</a>';
+                     homeBannerBuilder += '</div>';
+                     homeBannerBuilder += '</div>';                    
+                 }
+               
+             });
+             homeBannerBuilder += noProducts;
+             homeBannerBuilder += '</div>';
+         }
+         else {
+             FetchProductJson();
+         }
+         $(".clshomebanner").html(homeBannerBuilder);
+        
+     }
+
+ </script>

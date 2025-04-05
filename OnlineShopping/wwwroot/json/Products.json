@@ -1,0 +1,177 @@
+[
+  {
+    "categoryName": "Stationery",
+    "categoryImagePath": "banner-1.jpg",
+    "subCategory": [
+      {
+        "subCategoryName": "Pencil Boxes",
+        "subCategoryImagepath": "c38f3efc-d98d-4bb8-b88d-1d2011ee145e_PencilCollection.jpg",
+        "products": [
+          {
+            "productName": "Tablet Pencil Box",
+            "productImagepath": "8302d57e-6fad-4fd9-825d-60b8e86b0aca_TabletPencilBox.jpg",
+            "MRP": 150.0,
+            "sellingPrice": 104.0,
+            "status": "Inactive"
+          },
+          {
+            "productName": "Calculator Pencil Box",
+            "productImagepath": "9919d1e2-0bcb-4aec-80d3-34c8451ce772_CalculatorPencilBox.jpg",
+            "MRP": 100.0,
+            "sellingPrice": 60.0,
+            "status": "Active"
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Sharpner",
+        "subCategoryImagepath": "7aab5733-cbe7-4a6a-a051-7a06e3d0cf91_-OIyEo0UofCjyik7GUuC.jpg",
+        "products": [
+          {
+            "productName": "Cute Sharpner",
+            "productImagepath": "d0c73648-b37c-445f-955a-eaaad85425d7_CuteSharpner.jpg",
+            "MRP": 200.0,
+            "sellingPrice": 150.0,
+            "status": "Active"
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Erasers",
+        "subCategoryImagepath": "23a9b62a-065a-47d3-9782-1cce9df1aea0_-OKZqYGdea6w0Q1_cB2T.jpg",
+        "products": [
+          {
+            "productName": "Space Eraser",
+            "productImagepath": "425f73e3-5c97-43b4-aec6-6c56e55a6fc7_SpaceEraser.jpg",
+            "MRP": 6,
+            "sellingPrice": 4.75,
+            "status": "Active"
+          },
+          {
+            "productName": "Pokemon Eraser",
+            "productImagepath": "cf9145f0-b7b9-459b-a5da-e5b8316823e2_PokemonEraser.jpg",
+            "MRP": 4.75,
+            "sellingPrice": 4.75,
+            "status": "Active"
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Backup",
+        "subCategoryImagepath": "fd1e461e-6146-48f0-9bdd-8d8c1c563eb2_Backup.jpg",
+        "products": [
+          {
+            "productName": "Ice Cream Bag",
+            "productImagepath": "ac38677b-ad54-44e3-9e99-a1cfce69972e_IcecreamBag.jpg",
+            "MRP": 330.0,
+            "sellingPrice": 350.0,
+            "status": "Active"
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Pen",
+        "subCategoryImagepath": "a6776e10-493e-40a7-b99b-815ff382e601_Pen.jpg",
+        "products": [
+          {
+            "productName": "Gun Pen",
+            "productImagepath": "78ff7c35-c622-4ba3-ad86-34d207a2d3da_gunpen.jpg",
+            "MRP": 25.0,
+            "sellingPrice": 22.0,
+            "status": "Active"
+          }
+        ]
+      },      
+      {
+        "subCategoryName": "Stationery set items ",
+        "subCategoryImagepath": "daf56fe7-44e5-4f47-a437-471cbdb8faf2_WhatsApp Image 2024-04-30 at 17.55.10 (2).jpeg",
+        "products": []
+      },
+      {
+        "subCategoryName": "Colouring ",
+        "subCategoryImagepath": "32d5fde2-404f-43d6-a74f-a5a610b0f14d_20250325_172618.jpg",
+        "products": []
+      }
+    ]
+  },
+  {
+    "categoryName": "Return Gifts",
+    "categoryImagePath": "banner-2.jpg",
+    "subCategory": [
+      {
+        "subCategoryName": "Key chain",
+        "subCategoryImagepath": "d3216450-2b9f-4d49-aafa-c485acdd85b2_Keychain.jpg",
+        "products": [
+          {
+            "productName": "Assorted Key Chain",
+            "productImagepath": "470eeda8-c1b0-4c92-a17d-6d702079b102_Keychain.jpg",
+            "MRP": 15.0,
+            "sellingPrice": 15.0,
+            "status": "Active"
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Pichwai jars",
+        "subCategoryImagepath": "4ffc345a-e0e7-4436-9fcd-95a6069cb9c9_Screenshot_20250329_230510_WhatsApp.jpg",
+        "products": []
+      }
+    ]
+  },
+  {
+    "categoryName": "Toys",
+    "categoryImagePath": "f0e3f492-a32e-4779-9f9f-54e6766ec770_Toys.jpg",
+    "subCategory": [
+      {
+        "subCategoryName": "Electronic Toys",
+        "subCategoryImagepath": "fbd38335-a799-4d66-b6f7-8f9b291f6f26_ElectronicToys.jpg",
+        "products": [
+          {
+            "productName": "Smoking Car",
+            "productImagepath": "6aca44e2-f30e-481c-9521-281b2d449134_SmokingCar.jpeg",
+            "MRP": 580.0,
+            "sellingPrice": 480.0,
+            "status": null
+          }
+        ]
+      },
+      {
+        "subCategoryName": "Wooden Toys",
+        "subCategoryImagepath": "b004c163-fe89-45ac-a20f-b3036868d562_WoodenToys.jpg",
+        "products": [
+          {
+            "productName": "Wooden Tamil Letter",
+            "productImagepath": "2b427a61-a82b-4eb5-b1ba-d0174f7fa3e5_WoodenTamilLetter.jpeg",
+            "MRP": 85.0,
+            "sellingPrice": 70.0,
+            "status": "Active"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Wooden Toys",
+    "categoryImagePath": "7fde6a12-fafc-4c48-950c-2aa6d6489cbe_WoodenToys.jpg",
+    "subCategory": []
+  },
+  {
+    "categoryName": "Fancy Water Bottles",
+    "categoryImagePath": "eb2ee8e9-5120-40d3-8d70-7e3e2c2ac876_FancyWaterBottles.jpeg",
+    "subCategory": [
+      {
+        "subCategoryName": "Water bottle and sippers ",
+        "subCategoryImagepath": "792c855a-9a27-4ec7-bc8c-05eb963d42ee_IMG-20250404-WA0041.jpg",
+        "products": [
+          {
+            "productName": "Nice bottle ",
+            "productImagepath": "ea43f8fc-dedb-480c-9f2b-aeeef23ca8c1_61UkBcJYYGL.jpg",
+            "MRP": 100.0,
+            "sellingPrice": 70.0,
+            "status": null
+          }
+        ]
+      }
+    ]
+  }
+]
