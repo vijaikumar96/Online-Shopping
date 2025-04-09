@@ -57,7 +57,6 @@ $('body').on('change', '.custom-control[name="categoryName"]', function () {
 });
 
 function invokeViewProducts() {
-    debugger
     var productBuilder = "";
 
             $.map(TotalAdminProducts, function (product, sccnt) {
